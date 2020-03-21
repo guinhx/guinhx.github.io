@@ -1,1 +1,1 @@
-# Game
+# Comparative games
