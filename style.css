@@ -109,11 +109,11 @@ table tr td{
 	padding: 5px 15px;
 }
 a:link{
-	color: blue;
+	color: #353535;
 	text-decoration: none;
 }
 a:visited{
-	color: blue;
+	color: #353535;
 }
 .buylist {
 	list-style: none;
@@ -129,8 +129,15 @@ a:visited{
 .buylink img {
 	height: 35px;
 }
+.preview {
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	max-width: 500px;
+}
 .preview-img{
 	width: 500px;
+	max-height: 259px;
 }
 .floating-btn{
 	position: fixed;
