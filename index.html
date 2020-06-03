@@ -1,72 +1,84 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <title>Comparative games information</title>
-        <style>
-            a:link{
-                color: blue;
-                text-decoration: none;
-            }
-            a:visited{
-                color: blue;
-            }
-        </style>
-    </header>
-    <body>
-    <h1>My games list</h1>
-    <ul>
-        <li><a href="games/watchdogs.html">Watch Dogs</a></li>
-        <li><a href="games/csgo.html">Counter Strike: Global Offensive</a></li>
-        <li><a href="games/codmw.html">Call of Duty 4: Modern Warfare</a></li>
-    </ul>
-    <table border="1px" style="border: 1px solid black;">
-        <tr>
-            <th>Name</th>
-            <th>Release date</th>
-            <th>Category</th>
-            <th>Brand</th>
-            <th colspan="3">Platforms</th>
-            <th colspan="2">Price</th>
-        </tr>
-        <tr>
-            <td>Watch Dogs</td>
-            <td>27 mai. 2014</td>
-            <td>Action and Adventure</td>
-            <td>Ubisoft</td>
-            <td>PS3/PS4</td>
-            <td>XBOX ONE/360</td>
-            <td>PC</td>
-            <td>$7.49</td>
-            <td>$19.99</td>
-        </tr>
-        <tr>
-            <td>CS:GO</td>
-            <td>21 aug. 2012</td>
-            <td>FPS and E-Sport</td>
-            <td>Valve</td>
-            <td>PS3</td>
-            <td>XBOX 360</td>
-            <td>PC</td>
-            <td>FREE</td>
-            <td>$12,86</td>
-        </tr>
-        <tr>
-            <td>COD4:MW</td>
-            <td>5 nov. 2007</td>
-            <td>FPS</td>
-            <td>Activision<br>Square Enix</td>
-            <td>PS3</td>
-            <td>XBOX 360</td>
-            <td>PC</td>
-            <td>$6.99</td>
-            <td>$9.99</td>
-        </tr>
-        <tf>
-            <tr>
-                <td colspan="9">Values consulted in 03/19/2020</td>
-            </tr>
-        </tf>
-    </table>
-    <p>Table one, comparative of games.</p>
-    </body>
+<header>
+    <title>Comparative games information</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</header>
+<body>
+    <div class="top">
+        <h1>My game list</h1>
+    </div>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Game list</h2>
+            <ul>
+                <li><a href="games/watchdogs.html">Watch Dogs</a></li>
+                <li><a href="games/csgo.html">Counter Strike: Global Offensive</a></li>
+                <li><a href="games/codmw.html">Call of Duty 4: Modern Warfare</a></li>
+            </ul> 
+        </div>
+        <div class="content">
+            <div class="info">
+                <table border="1px" style="border: 1px solid black;">
+                    <tr>
+                        <th>Name</th>
+                        <th>Release date</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th colspan="3">Platforms</th>
+                        <th colspan="2">Price</th>
+                    </tr>
+                    <tr>
+                        <td>Watch Dogs</td>
+                        <td>27 mai. 2014</td>
+                        <td>Action and Adventure</td>
+                        <td>Ubisoft</td>
+                        <td>PS3/PS4</td>
+                        <td>XBOX ONE/360</td>
+                        <td>PC</td>
+                        <td>$7.49</td>
+                        <td>$19.99</td>
+                    </tr>
+                    <tr>
+                        <td>CS:GO</td>
+                        <td>21 aug. 2012</td>
+                        <td>FPS and E-Sport</td>
+                        <td>Valve</td>
+                        <td>PS3</td>
+                        <td>XBOX 360</td>
+                        <td>PC</td>
+                        <td>FREE</td>
+                        <td>$12,86</td>
+                    </tr>
+                    <tr>
+                        <td>COD4:MW</td>
+                        <td>5 nov. 2007</td>
+                        <td>FPS</td>
+                        <td>Activision<br>Square Enix</td>
+                        <td>PS3</td>
+                        <td>XBOX 360</td>
+                        <td>PC</td>
+                        <td>$6.99</td>
+                        <td>$9.99</td>
+                    </tr>
+                    <tf>
+                        <tr>
+                            <td colspan="9">Values consulted in 03/19/2020</td>
+                        </tr>
+                    </tf>
+                </table>
+                <div class="header" style="margin: 10px 0; width: 83%;">
+                    <p style="text-align: center;">Table one, comparative of games.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bottom">
+        <ul>
+            <li><a href="#">Cadastre-se</a></li>
+            <li><a href="#">Fale conosco</a></li>
+            <li><a href="#">Facebook</a></li>
+        </ul>
+    </footer>
+</body>
 </html>
