@@ -10,9 +10,6 @@
 body{
 	background-color: #fbfbfb !important;
 }
-h2 {
-	padding: 8px 0;
-}
 .navbar{
 	background-color: #fff;
 	box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
@@ -32,14 +29,46 @@ p{
 h1 {
 	font-size: 38px !important;
 }
-.center {
-	justify-content: center;
-	align-items: center;
+.content {
+	margin: 50px 0px;
+}
+.box-game {
+	height: 490px;
+	background-color: red;
+}
+.box-title {
+	background: blue;
+	color: white;
+	font-size: 28px;
+	padding: 15px 30px;
+}
+h2 {
+	margin-bottom: 0;
+}
+.box-right {
+	height: 565px;
+}
+.box-preview {
+	height: 87%;
+	background-color: blue;
+}
+.box-links {
+	margin-top: 15px;
+	height: 15%;
+	background-color: green;
+}
+.row {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+}
+.center {
+	flex-wrap: wrap;
+	justify-content: center;
+  display: flex;
+	flex-direction: row;
 }
 .wrap-100 {
-	margin: 50px 0px;
+	margin: 125px 0px;
 }
 table tr th{
 	padding: 10px;
