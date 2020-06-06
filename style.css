@@ -64,7 +64,6 @@ body{
 .dropdown-menu {
 	top: 130% !important;
 	border: none !important;
-	box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
 }
 .dropdown-menu .dropdown-item.active, .dropdown-item:active {
 	background: linear-gradient(-68deg, #e432d9, #ff7801);
@@ -73,6 +72,7 @@ body{
 	height: auto;
 }
 .modal-dialog{
+	margin: 2rem auto;
 	max-width: max-content;
 	width: 100%;
 }
@@ -103,6 +103,7 @@ body{
 }
 .modal-body img {
 	border-radius: 3px;
+	max-height: 640px;
 }
 p{
 	text-align: justify;
@@ -113,6 +114,9 @@ h1 {
 }
 .content {
 	margin: 50px 0px;
+}
+.container-fluid {
+	padding: 0;
 }
 .box-game {
 	background-color: white;
@@ -149,9 +153,11 @@ h2 {
 	margin-bottom: 0;
 }
 .box-right {
-	height: 565px;
+	height: 300px;
+	margin-bottom: 30px;
 }
 .box-preview {
+	margin-top: 15px;
 	padding: 7px;
 	height: 87%;
 	background-color: white;
@@ -206,6 +212,7 @@ h2 {
 	flex-direction: row;
 }
 .wrap-100 {
+	width: 100%;
 	margin: 125px 0px;
 }
 table tr th{
@@ -216,11 +223,8 @@ table tr td{
 }
 .table100 {
   border-radius: 16px;
-  overflow: hidden;
+	overflow-x: auto;
   background: linear-gradient(-68deg, #e432d9, #ff7801);
-}
-table {
-	white-space: nowrap;
 }
 .table100 table {
   background-color: transparent;
@@ -288,4 +292,61 @@ table {
 }
 .bottom ul li a:visited{
 	color: #fff;
+}
+
+@media (min-width: 690px) {
+	.box-right{
+		height: 910px;
+	}
+	.dropdown-menu {
+		box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+	}
+	.container-fluid {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.img-preview {
+		margin: 1%;
+		height: 48%;
+		width: 48%;
+	}
+	.box-preview {
+		margin-top: 15px;
+		padding: 10px;
+		height: 90%;
+	}
+	.modal-dialog{
+		margin: 5.50rem auto;
+		max-width: max-content;
+		width: 100%;
+	}
+	.modal-body img {
+		border-radius: 3px;
+		max-height: 480px;
+	}
+}
+
+@media (min-width: 1015px) {
+	.box-right{
+		height: 565px;
+	}
+	.box-preview {
+		margin-top: 0;
+		padding: 7px;
+		height: 87%;
+	}
+	.img-preview {
+		margin: 1%;
+		height: 48%;
+		width: 48%;
+	}
+	.modal-body img {
+		border-radius: 3px;
+		max-height: 640px;
+	}
+	.modal-dialog{
+		margin: 2rem auto;
+		max-width: max-content;
+		width: 100%;
+	}
 }
