@@ -10,10 +10,47 @@
 body{
 	background-color: #f9f9f9;
 }
+.title{
+	margin-top: 50px;
+}
+.signup {
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
 .navbar{
 	background-color: #fff;
 	box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
 	padding: auto 80px;
+}
+.navbar-toggler {
+	border: none;
+}
+.navbar-to-right{
+	margin-left: auto;
+	margin-right: 45px;
+}
+.btn:focus {
+	box-shadow: none;
+}
+.form-control:focus {
+	border-color: #ff7801;
+	box-shadow: none;
+}
+.my-btn{
+	background: -webkit-linear-gradient(-68deg, #e432d9, #ff7801);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	border: 1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(-68deg, #e432d9, #ff7801);
+}
+.my-btn:hover {
+	background: -webkit-linear-gradient(-68deg, #ff7801, #e432d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	border: 1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(-68deg, #ff7801, #e432d9);
 }
 .dropdown-menu {
 	top: 130% !important;
@@ -112,7 +149,6 @@ h2 {
 	display: flex;
 	flex: column;
 	flex-wrap: wrap;
-	justify-content: center;
 	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
@@ -174,6 +210,9 @@ table tr td{
   overflow: hidden;
   background: linear-gradient(-68deg, #e432d9, #ff7801);
 }
+table {
+	white-space: nowrap;
+}
 .table100 table {
   background-color: transparent;
 }
@@ -204,8 +243,9 @@ table tr td{
   background-color: rgba(255,255,255,0.2);
 }
 .bottom {
+	padding-top: 35px;
+	padding-bottom: 35px;
 	background: linear-gradient(-68deg, #e432d9, #ff7801);
-	height: 150px;
 	flex-wrap: wrap;
 	display: flex;
 	flex-direction: row;
