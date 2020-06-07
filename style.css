@@ -72,7 +72,7 @@ body{
 	height: auto;
 }
 .modal-dialog{
-	margin: 2rem auto;
+	margin: 28vh auto;
 	max-width: max-content;
 	width: 100%;
 }
@@ -103,7 +103,7 @@ body{
 }
 .modal-body img {
 	border-radius: 3px;
-	max-height: 640px;
+	height: 25vh;
 }
 p{
 	text-align: justify;
@@ -114,6 +114,9 @@ h1 {
 }
 .content {
 	margin: 50px 0px;
+}
+.col-lg-12 {
+	padding: 0;
 }
 .container-fluid {
 	padding: 0;
@@ -189,16 +192,18 @@ h2 {
 	border-bottom-right-radius: 5px;
 }
 .box-link{
+	padding-left: 15px;
+	padding-right: 15px;
 	margin: 0px 10px 0 5px;
 	color: #ff5f3a;
-	font-size: 50px;
+	font-size: 48px;
 	line-height: 0;
 }
 .box-link:hover{
 	margin: 0px 10px 0 5px;
 	color: #ff3a3a;
 	text-shadow: 0px 2px rgba(0, 0, 0, 0.1);
-	font-size: 50px;
+	font-size: 48px;
 	line-height: 0;
 }
 .row {
@@ -212,7 +217,8 @@ h2 {
 	flex-direction: row;
 }
 .wrap-100 {
-	width: 100%;
+	max-width: 100%;
+	padding: 0 10px;
 	margin: 125px 0px;
 }
 table tr th{
@@ -298,9 +304,6 @@ table tr td{
 	.box-right{
 		height: 910px;
 	}
-	.dropdown-menu {
-		box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
-	}
 	.container-fluid {
 		padding-left: 15px;
 		padding-right: 15px;
@@ -316,19 +319,25 @@ table tr td{
 		height: 90%;
 	}
 	.modal-dialog{
-		margin: 5.50rem auto;
+		margin: 28vh auto;
 		max-width: max-content;
 		width: 100%;
 	}
 	.modal-body img {
 		border-radius: 3px;
-		max-height: 480px;
+		min-height: 80vh;
 	}
 }
-
 @media (min-width: 1015px) {
 	.box-right{
 		height: 565px;
+	}
+	.col-lg-12 {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.dropdown-menu {
+		box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
 	}
 	.box-preview {
 		margin-top: 0;
@@ -342,11 +351,17 @@ table tr td{
 	}
 	.modal-body img {
 		border-radius: 3px;
-		max-height: 640px;
+		min-height: 80vh;
 	}
 	.modal-dialog{
-		margin: 2rem auto;
+		margin: 22vh auto;
 		max-width: max-content;
 		width: 100%;
+	}
+}
+@media (min-width: 700px) {
+	.modal-body img {
+		min-height: 50vh;
+		max-height: 80vh;
 	}
 }
