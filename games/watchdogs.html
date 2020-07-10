@@ -11,9 +11,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="../style.css">
   <script src="https://kit.fontawesome.com/55a666a496.js" crossorigin="anonymous"></script>
-  <script src="../js/navbar.js"></script>
+  <script src="../js/master.js"></script>
 </head>
-<body onload="updateActiveItem()">
+<body onload="handlePage()">
   <nav class="navbar navbar-expand-lg navbar-light ">
     <a class="navbar-brand ml-lg-4" href="../index.html">
       <img src="../images/logo/origin.svg" width="30" height="30" class="d-inline-block align-top" alt="origin logo">
@@ -80,13 +80,13 @@
             </a>
           </div>
           <div class="box-links">
-            <a target="_blank" href="http://store.steampowered.com/app/243470/Watch_Dogs/" class="box-link">
+            <a id="steam-link" target="_blank" href="http://store.steampowered.com/app/243470/Watch_Dogs/" class="box-link">
               <span class="fa fa-steam">
             </a>
-            <a target="_blank" href="https://www.amazon.com/Watch-Dogs-PC/dp/B00BQWTGIS" class="box-link">
+            <a id="amazon-link" target="_blank" href="https://www.amazon.com/Watch-Dogs-PC/dp/B00BQWTGIS" class="box-link">
               <span class="fa fa-amazon">
             </a>
-            <a target="_blank" href="https://www.microsoft.com/en-us/p/watch-dogs/c4dmgrpnshxg" class="box-link">
+            <a id="windows-link" target="_blank" href="https://www.microsoft.com/en-us/p/watch-dogs/c4dmgrpnshxg" class="box-link">
               <span class="fa fa-windows">
             </a>
             </div>
