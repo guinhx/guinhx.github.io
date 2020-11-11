@@ -2,7 +2,9 @@
 
 #### Youtube Redesign based in concept's.
 
-* See home page concept of Prince Akachi on [UPLABS](https://www.uplabs.com/challenges/youtube-redesign-challenge-e5a25595-1c32-4180-b379-8e0a832b189d)
-* See player page concept of Craft Work on [Dribble](https://dribbble.com/shots/6755282-Youtube-ReDesign-Concept)
+* [See Youtube Redesign](https://guinhx.github.io/youtube-redesign/)
+###### All layout credits and ideas are attributed to the creators of the concepts.
 
-###### All layout credits and ideas are attributed to the creators of the concepts, supporting them and accessing their projects above.
+#### Simple design of game comparisons with prices and information about it for study purposes.
+* [See Comparative of Games](https://guinhx.github.io/ppw-01-gamewebsite/)
+
