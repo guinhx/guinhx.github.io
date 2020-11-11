@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube</title>
+  <link rel="shortcut icon" href="youtube.svg">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <!-- JavaScript -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <link rel="stylesheet" href="css/icofont/icofont.min.css">
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <script src="https://kit.fontawesome.com/55a666a496.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="col-lg-2 side-bar">
+      <div class="logo-reveal">
+        <img src="youtube-text.svg" alt="youtube logo">
+      </div>
+      <div class="side-profile">
+        <div class="side-image">
+          <img src="img/houtarou.jpg" alt="">
+        </div>
+        <div class="profile-text">
+          <div class="dropdown">
+            <a class="dropdown-toggle" type="button" id="profile-actions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Houtarou
+            </a>
+            <div class="dropdown-menu profile-drop" aria-labelledby="profile-actions">
+              <h6 class="dropdown-header">Others pages</h6>
+              <a class="dropdown-item" href="#">My channel</a>
+              <a class="dropdown-item" href="login.html">Make login</a>
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="side-group">
+        <a class="side-item active" href="#">
+          <i class="fa fa-home side-icon" aria-hidden="true"></i>
+          Home
+        </a>
+        <a class="side-item" href="#">
+          <i class="fa fa-fire side-icon" aria-hidden="true"></i>
+          Trending
+        </a>
+        <a class="side-item" href="#">
+          <i class="fa fa-list side-icon" aria-hidden="true"></i>
+          Subscriptions
+        </a>
+      </div>
+      <div class="side-group">
+        <a class="side-item" href="#">
+          <i class="fa fa-history side-icon" aria-hidden="true"></i>
+          History
+        </a>
+        <a class="side-item" href="#">
+          <i class="icofont-library side-icon" aria-hidden="true"></i>
+          Library
+        </a>
+        <a class="side-item" href="#">
+          <i class="fa fa-thumbs-up side-icon" aria-hidden="true"></i>
+          Liked Video
+        </a>
+      </div>
+      <div class="side-group end">
+        <a class="side-item" href="#">
+          <i class="fa fa-cog side-icon" aria-hidden="true"></i>
+          Settings
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-10 content">
+      <nav class="navbar navbar-main">
+        <a class="navbar-brand mr-auto" href="index.html">
+          <img src="youtube-text.svg" height="20" alt="" loading="lazy">
+        </a>
+        <form class="form-inline">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-search-red" type="submit">
+            <i class="icofont-search-1" aria-hidden="true"></i>
+          </button>
+        </form>
+        <div class="navbar-options">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-cloud-upload-alt" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-th" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="nav-categories">
+        <div class="categories-list">
+          <div class="carousel-cell">
+            <div class="cat-item active">
+              <a class="cat-link" href="#">All Videos</a>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="cat-item">
+              <a class="cat-link" href="#">Music</a>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="cat-item">
+              <a class="cat-link" href="#">Sports</a>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="cat-item">
+              <a class="cat-link" href="#">Gaming</a>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="cat-item">
+              <a class="cat-link" href="#">On live</a>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="cat-item">
+              <a class="cat-link" href="#">Movies</a>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="cat-item">
+              <a class="cat-link" href="#">News</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="category-list"> <!-- RECOMENDED -->
+        <h2 class="category-title">Recommended</h2>
+        <div class="category-items">
+          <div class="carousel-cell">
+            <a class="not-link" href="watch.html">
+              <div class="video-item" style="background-image: url('img/daughter-medicine.jpg');">
+                <div class="video-info">
+                  <div class="info-photo" style="background-image: url('img/MrSuicideSheep.jpg')">
+                  </div>
+                  <div class="info-content">
+                    <p class="title">Daughter - Medicine (Sound Remedy Remix)</p>
+                    <p class="sub-title">MrSuicideSheep</p>
+                  </div>
+                  <div class="info-time">
+                    <p>07:11</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item" style="background-image: url('img/confetti-ghost.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/MrSuicideSheep.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Confetti - Ghost</p>
+                  <p class="sub-title">MrSuicideSheep</p>
+                </div>
+                <div class="info-time">
+                  <p>02:52</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item" style="background-image: url('img/rockandroll.png');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/eden.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">EDEN - rock + roll</p>
+                  <p class="sub-title">EDEN</p>
+                </div>
+                <div class="info-time">
+                  <p>05:14</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item" style="background-image: url('img/wakeup.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/MrSuicideSheep.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">EDEN - Wake Up</p>
+                  <p class="sub-title">MrSuicideSheep</p>
+                </div>
+                <div class="info-time">
+                  <p>04:39</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="category-list"> <!-- RECENTLY UPLOADED -->
+        <h2 class="category-title">Recently Uploaded</h2>
+        <div class="category-items">
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/PushMyLuck.png');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/the-chainsmokers.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Push My Luck (Official Video)</p>
+                  <p class="sub-title">The Chainsmokers</p>
+                </div>
+                <div class="info-time">
+                  <p>03:03</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/WhenTheLightsGoDown.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/djsnake.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">When The Lights Go Down</p>
+                  <p class="sub-title">DJ Snake</p>
+                </div>
+                <div class="info-time">
+                  <p>03:11</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/disfigure-blank.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/ncs.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Disfigure - Blank</p>
+                  <p class="sub-title">NoCopyrightSounds</p>
+                </div>
+                <div class="info-time">
+                  <p>03:29</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/chlorine.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/top.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Chlorine (Official Video)/p>
+                  <p class="sub-title">twenty one pilots</p>
+                </div>
+                <div class="info-time">
+                  <p>05:24</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/levelofconcern.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/top.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Level of Concern (Official Video)</p>
+                  <p class="sub-title">twenty one pilots</p>
+                </div>
+                <div class="info-time">
+                  <p>03:52</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="category-list"> <!-- RECENTLY UPLOADED -->
+        <h2 class="category-title">Best of the week</h2>
+        <div class="category-items">
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/PushMyLuck.png');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/the-chainsmokers.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Push My Luck (Official Video)</p>
+                  <p class="sub-title">The Chainsmokers</p>
+                </div>
+                <div class="info-time">
+                  <p>03:03</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/WhenTheLightsGoDown.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/djsnake.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">When The Lights Go Down</p>
+                  <p class="sub-title">DJ Snake</p>
+                </div>
+                <div class="info-time">
+                  <p>03:11</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/disfigure-blank.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/ncs.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Disfigure - Blank</p>
+                  <p class="sub-title">NoCopyrightSounds</p>
+                </div>
+                <div class="info-time">
+                  <p>03:29</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/chlorine.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/top.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Chlorine (Official Video)/p>
+                  <p class="sub-title">twenty one pilots</p>
+                </div>
+                <div class="info-time">
+                  <p>05:24</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="video-item other" style="background-image: url('img/levelofconcern.jpg');">
+              <div class="video-info">
+                <div class="info-photo" style="background-image: url('img/top.jpg')">
+                </div>
+                <div class="info-content">
+                  <p class="title">Level of Concern (Official Video)</p>
+                  <p class="sub-title">twenty one pilots</p>
+                </div>
+                <div class="info-time">
+                  <p>03:52</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script type="text/javascript">
+  $('.category-items').flickity({
+    // options
+    cellAlign: 'left',
+    contain: true,
+    freeScroll: true,
+    prevNextButtons: false,
+    pageDots: false
+  });
+  $('.categories-list').flickity({
+    // options
+    cellAlign: 'center',
+    contain: true,
+    freeScroll: true,
+    prevNextButtons: false,
+    pageDots: false
+  });
+  </script>
+</body>
+</html>

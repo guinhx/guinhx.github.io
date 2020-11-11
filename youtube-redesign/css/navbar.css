@@ -1,0 +1,125 @@
+.navbar-main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #ffffff;
+  max-height: 100px;
+}
+.navbar-main.default{
+  padding: 10px 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.navbar-brand img{
+  vertical-align: unset;
+  margin-left: 15px;
+}
+.form-inline {
+  display: none;
+  flex-flow: nowrap;
+}
+.form-inline .form-control {
+  width: 400px;
+}
+.form-control{
+  padding: 22px 48px;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 0;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  line-height: 0;
+}
+.form-control:hover{
+  background-color: #f3f3f3;
+}
+.form-control:focus{
+  background-color: #f3f3f3;
+  box-shadow: none;
+}
+.btn-search-red{
+  padding: 9px 24px;
+  border-radius: 0;
+  background: #ff0000;
+  color: white;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.btn-search-red:hover{
+  color: white;
+}
+.btn:focus{
+  box-shadow: none;
+}
+.navbar-options{
+  margin-left: 50px;
+}
+.navbar-nav{
+  display: flex;
+  flex-direction: row;
+}
+.nav-item{
+  padding: 10px 12px;
+}
+.nav-item .nav-link {
+  font-size: 22px;
+  color: #c4c4c4;
+  line-height: 40px;
+}
+.nav-image {
+  max-width: 50px;
+  max-height: 50px;
+}
+.nav-image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}
+.nav-drop {
+  border: none;
+  margin: 0;
+  margin-top: 15px;
+  right: auto;
+  left: 50%;
+  -webkit-transform: translate(-30vh, 0);
+  -o-transform: translate(-30vh, 0);
+  transform: translate(-30vh, 0);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+}
+.nav-item.search {
+  display: flex;
+}
+
+.nav-item.hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 1015px) {
+  .nav-drop {
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  .navbar-brand img{
+    margin-left: 25px;
+  }
+  .nav-item {
+    padding: 10px 20px;
+  }
+  .nav-item.search {
+    display: none;
+  }
+  .navbar-main {
+    padding: 0 75px;
+  }
+  .form-inline {
+    display: flex;
+  }
+  .nav-item.hidden-mobile {
+    display: flex;
+  }
+}
