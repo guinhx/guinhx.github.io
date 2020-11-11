@@ -46,16 +46,16 @@ body{
 }
 .my-btn{
 	background: -webkit-linear-gradient(-68deg, #e432d9, #ff7801);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  	background-clip: text;
+  	-webkit-text-fill-color: transparent;
 	border: 1px solid;
 	border-image-slice: 1;
 	border-image-source: linear-gradient(-68deg, #e432d9, #ff7801);
 }
 .my-btn:hover {
 	background: -webkit-linear-gradient(-68deg, #ff7801, #e432d9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  	background-clip: text;
+  	-webkit-text-fill-color: transparent;
 	border: 1px solid;
 	border-image-slice: 1;
 	border-image-source: linear-gradient(-68deg, #ff7801, #e432d9);
@@ -297,6 +297,10 @@ table tr td{
 }
 .bottom ul li a:visited{
 	color: #fff;
+}
+
+.form-control.success {
+	border: 2px green solid;
 }
 
 @media (min-width: 690px) {
