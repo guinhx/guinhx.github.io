@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Test - Ultra Low Latency</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+        .hidden-state {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-black text-white font-sans flex flex-col p-4 md:p-8 select-none overflow-hidden">
+    <header class="max-w-5xl mx-auto w-full mb-6 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <i data-lucide="zap" class="text-yellow-400 fill-yellow-400 w-6 h-6"></i>
+            <h1 class="text-xl font-black italic tracking-tighter uppercase">
+                Ultra-Low Latency 
+                <span class="text-slate-600 not-italic tracking-normal text-xs ml-2 align-middle border border-slate-700 rounded px-2 py-0.5">V-SYNC AWARE</span>
+            </h1>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-mono text-slate-500">
+            <div class="flex items-center gap-2 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
+                <i data-lucide="monitor" id="fps-icon" class="w-3 h-3 text-slate-500"></i>
+                <span class="font-bold text-slate-300"><span id="fps-counter">0</span> Hz</span>
+                <span class="text-slate-600 border-l border-slate-700 pl-2">~<span id="frame-time">0</span>ms / frame</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto w-full grid grid-cols-1 lg:grid-cols-4 gap-6 flex-grow h-[calc(100vh-140px)]">
+        
+        <div class="lg:col-span-3 flex flex-col h-full">
+            <div id="test-area" 
+                 class="flex-grow min-h-[400px] rounded-[2rem] flex flex-col items-center justify-center text-center p-8 shadow-2xl cursor-crosshair relative overflow-hidden transition-none"
+                 style="background-color: #2563eb; touch-action: none;">
+                
+                <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+                <div class="relative z-10 w-full">
+                    <div id="state-idle" class="flex flex-col items-center">
+                        <h2 class="text-5xl font-black mb-4 uppercase tracking-tighter">Engine Test</h2>
+                        <p class="text-lg opacity-70 mb-8 max-w-sm mx-auto">Click anywhere. Now synchronizing with your <span id="intro-hz">60</span>Hz refresh rate.</p>
+                        <div class="bg-white/10 border border-white/20 py-3 px-8 rounded-full font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            Tap to Start
+                        </div>
+                    </div>
+
+                    <div id="state-waiting" class="hidden-state">
+                        <div class="text-white/20 font-black text-4xl uppercase tracking-[1em] animate-pulse">Wait</div>
+                    </div>
+
+                    <div id="state-ready" class="hidden-state">
+                        <div class="text-white font-black text-9xl italic tracking-tighter">GO!</div>
+                    </div>
+
+                    <div id="state-too-early" class="hidden-state flex flex-col items-center">
+                        <i data-lucide="alert-circle" class="w-20 h-20 mb-4"></i>
+                        <h2 class="text-5xl font-black uppercase">JUMPED!</h2>
+                        <p class="mt-4 opacity-80 font-bold uppercase">Try again</p>
+                    </div>
+
+                    <div id="state-result" class="hidden-state flex flex-col items-center animate-in slide-in-from-bottom-4 duration-200">
+                        <h2 class="text-[140px] leading-none font-black tracking-tighter drop-shadow-2xl">
+                            <span id="result-ms">0</span><span class="text-4xl opacity-50 font-medium tracking-normal ml-2">ms</span>
+                        </h2>
+                        <p class="mb-8 font-mono text-sm opacity-60 uppercase tracking-widest">
+                            Frames elapsed: ~<span id="result-frames">0</span>
+                        </p>
+                        <div class="flex gap-4">
+                            <div class="bg-black/20 backdrop-blur-md px-8 py-4 rounded-2xl flex items-center gap-2 font-bold uppercase tracking-widest border border-white/10 hover:bg-black/30 transition-colors">
+                                <i data-lucide="refresh-ccw" class="w-5 h-5"></i> Continue
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <aside class="h-full">
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-[2rem] h-full flex flex-col">
+                <h3 class="text-xs font-black text-slate-500 uppercase tracking-widest mb-6 flex items-center gap-2">
+                    <i data-lucide="history" class="w-3 h-3"></i> Telemetry
+                </h3>
+                
+                <div class="grid grid-cols-1 gap-3 mb-6">
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i data-lucide="monitor" class="w-12 h-12"></i>
+                        </div>
+                        <p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Theoretical Min</p>
+                        <p class="text-xl font-bold font-mono text-slate-400">~<span id="stat-min-lag">0</span>ms</p>
+                        <p class="text-[9px] text-slate-600 mt-1">Base input lag floor</p>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                        <p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Session Avg</p>
+                        <p class="text-3xl font-black font-mono text-blue-500"><span id="stat-avg">0</span>ms</p>
+                    </div>
+                </div>
+
+                <div class="flex-grow overflow-y-auto pr-2 custom-scrollbar">
+                    <div id="history-list" class="space-y-2">
+                        <!-- History items injected here -->
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] font-bold text-slate-700 uppercase tracking-widest">
+        <span>Precision: requestAnimationFrame</span>
+        <span>Driver: PointerEvent</span>
+        <span>Sync: <span id="footer-hz">0</span>Hz</span>
+    </footer>
+
+    <script>
+        let gameState = 'idle'; // idle, waiting, ready, too-early, result
+        let history = [];
+        let timer = null;
+        let startTime = 0;
+        let currentFps = 60;
+        
+        const testArea = document.getElementById('test-area');
+        const stateViews = {
+            idle: document.getElementById('state-idle'),
+            waiting: document.getElementById('state-waiting'),
+            ready: document.getElementById('state-ready'),
+            'too-early': document.getElementById('state-too-early'),
+            result: document.getElementById('state-result')
+        };
+        
+        const fpsCounter = document.getElementById('fps-counter');
+        const frameTimeDisplay = document.getElementById('frame-time');
+        const fpsIcon = document.getElementById('fps-icon');
+        const introHz = document.getElementById('intro-hz');
+        const footerHz = document.getElementById('footer-hz');
+        const resultMs = document.getElementById('result-ms');
+        const resultFrames = document.getElementById('result-frames');
+        const statMinLag = document.getElementById('stat-min-lag');
+        const statAvg = document.getElementById('stat-avg');
+        const historyList = document.getElementById('history-list');
+
+        let frameCount = 0;
+        let lastTime = performance.now();
+
+        function measureHz(time) {
+            frameCount++;
+            const elapsed = time - lastTime;
+
+            if (elapsed >= 1000) {
+                currentFps = Math.round((frameCount * 1000) / elapsed);
+                const frameDuration = (1000 / currentFps).toFixed(1);
+                
+                // Update DOM
+                fpsCounter.textContent = currentFps;
+                introHz.textContent = currentFps;
+                footerHz.textContent = currentFps;
+                frameTimeDisplay.textContent = frameDuration;
+                statMinLag.textContent = frameDuration;
+                
+                if (currentFps > 70) {
+                    fpsIcon.classList.remove('text-slate-500');
+                    fpsIcon.classList.add('text-green-500');
+                }
+                
+                frameCount = 0;
+                lastTime = time;
+            }
+            requestAnimationFrame(measureHz);
+        }
+        requestAnimationFrame(measureHz);
+
+        function setGameState(newState) {
+            gameState = newState;
+            
+            Object.keys(stateViews).forEach(key => {
+                if (key === newState) {
+                    stateViews[key].classList.remove('hidden-state');
+                } else {
+                    stateViews[key].classList.add('hidden-state');
+                }
+            });
+
+            let color = '#2563eb';
+            if (newState === 'waiting') color = '#ef4444';
+            if (newState === 'ready') color = '#22c55e';
+            if (newState === 'too-early') color = '#eab308';
+            if (newState === 'result') color = '#3b82f6';
+            
+            testArea.style.backgroundColor = color;
+        }
+
+        function startTest() {
+            setGameState('waiting');
+            const delay = Math.floor(Math.random() * 3000) + 1500;
+
+            timer = setTimeout(() => {
+                requestAnimationFrame(() => {
+                    testArea.style.backgroundColor = '#22c55e';
+                    startTime = performance.now();
+
+                    gameState = 'ready';
+
+                    Object.values(stateViews).forEach(el => el.classList.add('hidden-state'));
+                    stateViews['ready'].classList.remove('hidden-state');
+                });
+            }, delay);
+        }
+
+        function handleInteraction(e) {
+            if (e.cancelable) e.preventDefault();
+
+            if (gameState === 'idle' || gameState === 'result' || gameState === 'too-early') {
+                startTest();
+            } else if (gameState === 'waiting') {
+                if (timer) clearTimeout(timer);
+                setGameState('too-early');
+            } else if (gameState === 'ready') {
+                const now = performance.now();
+                const diff = Math.round(now - startTime);
+                
+                history.unshift(diff);
+                if (history.length > 10) history.pop(); // Keep last 10
+
+                resultMs.textContent = diff;
+                resultFrames.textContent = Math.round(diff / (1000/currentFps));
+                
+                updateStats();
+                setGameState('result');
+            }
+        }
+
+        function updateStats() {
+            const sum = history.reduce((a, b) => a + b, 0);
+            const avg = history.length ? Math.round(sum / history.length) : 0;
+            statAvg.textContent = avg;
+
+            historyList.innerHTML = history.map((time, i) => `
+                <div class="flex justify-between items-center bg-slate-800/40 p-3 rounded-xl border border-white/5">
+                    <span class="text-slate-600 font-mono text-[10px]">#${history.length - i}</span>
+                    <span class="font-mono font-bold ${time < 200 ? 'text-green-400' : 'text-slate-400'}">
+                        ${time}ms
+                    </span>
+                </div>
+            `).join('');
+        }
+
+        testArea.addEventListener('pointerdown', handleInteraction);
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
